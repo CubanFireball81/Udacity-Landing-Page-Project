@@ -1,60 +1,54 @@
-/**
- * 
- * Manipulating the DOM exercise.
- * Exercise programmatically builds navigation,
- * scrolls to anchors from navigation,
- * and highlights section in viewport upon scrolling.
- * 
- * Dependencies: None
- * 
- * JS Version: ES2015/ES6
- * 
- * JS Standard: ESlint
- * 
-*/
+// Ensure page has been loaded before running functions.
+document.addEventListener('DOMContentLoaded', () => {
+    // collect sections.
+    const sections = document.querySelectorAll('section');
+    // build nav.
+    navigation(sections);
+    // add menu items click event listener
+    addMenuEventListener();
+})
 
-/**
- * Comments should be present at the beginning of each procedure and class.
- * Great to have comments before crucial code sections within the procedure.
-*/
+// build the nav menu from sections in html using for..of loop.
+const navigation = (sections => {
+    for (const section of sections) {
+        const sectionTitle = section.dataset.nav;
+        createNavigation(sectionTitle);
+    }
+})
 
-/**
- * Define Global Variables
- * 
-*/
+// add eventlistener to nav links, then smoothly scroll to that section.
+const addMenuEventListener = () => {
+    const menuLists = document.querySelectorAll("li");
+    for (const menuList of menuLists) {
 
+    // smoothly navigate to proper section when nav link is clicked.
+    menuList.addEventListener("click", () => {
+        const section = document.querySelector(`[data-nav='${menuList.id}']`);
+        if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+        }
+    });
+    }
+};
 
-/**
- * End Global Variables
- * Start Helper Functions
- * 
-*/
+// create navbar by adding link, anchor, and sectionName
+const createNavigation = (sectionName) => {
 
+  // create a list item.
+    let navBar = document.createElement("li");
+    navBar.setAttribute("id", `${sectionName}`);
 
+  // create an anchor tag.
+    let navBarContent = document.createElement(`a`);
 
-/**
- * End Helper Functions
- * Begin Main Functions
- * 
-*/
+  // add name to navigation bar.
+    let newContent = document.createTextNode(sectionName);
+    navBarContent.appendChild(newContent);
 
-// build the nav
+  // append new li child to navigation list.
+    navBar.appendChild(navBarContent);
 
-
-// Add class 'active' to section when near top of viewport
-
-
-// Scroll to anchor ID using scrollTO event
-
-
-/**
- * End Main Functions
- * Begin Events
- * 
-*/
-
-// Build menu 
-
-// Scroll to section on link click
-
-// Set sections as active
+  // grab navigation list so new items can be added. 
+    let currentDiv = document.getElementById("navbar__list");
+    currentDiv.appendChild(navBar);
+};

@@ -1,28 +1,39 @@
 /* ---- Base Rules ---- */
 body {
-  background: rgb(136, 203, 171);
-  background: linear-gradient(
-    0deg,
-    rgba(136, 203, 171, 1) 0%,
-    rgba(0, 13, 60, 1) 100%
-  );
+  background: url('../img/bg-larger.jpg');
+  background-position: center;
+  background-size: contain;
   margin: 0;
   font-family: "Merriweather", serif;
-  color: #fff;
+  color: #000;
 }
 
 /* Typeography General*/
 h1 {
   font-family: "Fira Sans", sans-serif;
-  font-size: 3em;
+  font-size: 2em;
   margin: 2em 1rem;
+  text-align: center;
 }
 
-@media only screen and (min-width: 35em) {
-  h1 {
-    font-size: 7em;
-    margin: 2em 4rem 1em;
-  }
+.header-title {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 6em;
+  margin-bottom: 0 ;
+  text-align: center;
+  color: #fff;
+  text-shadow: 2px 5px rgb(162, 38, 167);
+}
+
+.header-text {
+  line-height: 1.6em;
+  color: #ddd;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 2em;
+  font-size: 24px;
+  background-color: rgba(155, 42, 155, 0.4);
+  border-radius: 40px;
 }
 
 h2 {
@@ -42,27 +53,99 @@ main {
   margin: 10vh 1em 10vh;
 }
 
+a, a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(162, 38, 167)!important;
+  text-decoration: none;
+}
+
 .main-hero {
   min-height: 40vh;
   padding-top: 3em;
 }
 
+.buyBtn {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  font-size: 20px;
+  background-color: rgb(162, 38, 167);
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  width: auto;
+  margin: 20px;
+  padding: 10px;
+  transition: transform .2s;
+}
+
+button:hover {
+  background-color: #fff!important;
+  color: rgb(162, 38, 167)!important;
+  transform: scale(1.2);
+}
+
 section {
   position: relative;
-  min-height: 80vh;
+  min-height: 70vh;
+  margin: 20px;
+  border: 2px solid rgb(201, 62, 201);
+  border-radius: 50px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+#section1 {
+  background: url(../img/Macbook-Larger.jpg);
+  background-size: cover;
+  background-position: right;
+}
+
+#section2 {
+  background: url(../img/iPhone-Larger.jpg);
+  background-size: cover;
+  background-position: right;
+}
+
+#section3 {
+  background: url(../img/iPad-Cool-Larger.jpg);
+  background-size: cover;
+  background-position: right;
+}
+
+#section4 {
+  background: url(../img/Apple-Airpods-2.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+#section5 {
+  background: url(../img/Apple-Watch-Black.jpg);
+  background-size: cover;
+  background-position: right;
 }
 
 /* ---- Module Rules ---- */
-
 /* Navigation Styles*/
 .navbar__menu ul {
   padding-left: 0;
   margin: 0;
-  text-align: right;
+  text-align: center;
 }
 
 .navbar__menu li {
   display: inline-block;
+  color: #ddd!important;
+  margin: 15px;
+  cursor: pointer;
+  font-size: 2em;
 }
 
 .navbar__menu .menu__link {
@@ -73,16 +156,17 @@ section {
   color: #000;
 }
 
-.navbar__menu .menu__link:hover {
-  background: #333;
-  color: #fff;
-  transition: ease 0.3s all;
+.navbar__menu li:hover {
+  background-color: #fff!important;
+  border-radius: 50%;
+  transform: scale(1.2);
+  color: rgb(138, 29, 123)!important;
 }
 
 /* Header Styles */
 .page__header {
-  background: #fff;
-  position: fixed;
+  background: transparent;
+  position: absolute;
   top: 0;
   width: 100%;
   z-index: 5;
@@ -102,93 +186,13 @@ section {
 /* ---- Theme Rules ---- */
 /* Landing Container Styles */
 .landing__container {
-  padding: 1em;
-  text-align: left;
-}
-
-@media only screen and (min-width: 35em) {
-  .landing__container {
-    max-width: 50em;
-    padding: 4em;
-  }
-}
-
-section:nth-of-type(even) .landing__container {
-  margin-right: 0;
-  margin-left: auto;
-  text-align: right;
-}
-
-/* Background Circles */
-/* Note that background circles are created with psuedo elements before and after */
-/* Circles appear to be random do to use of :nth-of-type psuedo class */
-section:nth-of-type(odd) .landing__container::before {
-  content: "";
-  background: rgba(255, 255, 255, 0.187);
-  position: absolute;
-  z-index: -5;
-  width: 20vh;
-  height: 20vh;
-  border-radius: 50%;
-  opacity: 0;
-  transition: ease 0.5s all;
-}
-
-section:nth-of-type(even) .landing__container::before {
-  content: "";
-  background: rgb(255, 255, 255);
-  background: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(255, 255, 255, 0.2) 100%
-  );
-  position: absolute;
-  top: 3em;
-  right: 3em;
-  z-index: -5;
-  width: 10vh;
-  height: 10vh;
-  border-radius: 50%;
-  opacity: 0;
-  transition: ease 0.5s all;
-}
-
-section:nth-of-type(3n) .landing__container::after {
-  content: "";
-  background: rgb(255, 255, 255);
-  background: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(255, 255, 255, 0.2) 100%
-  );
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  z-index: -5;
-  width: 10vh;
-  height: 10vh;
-  border-radius: 50%;
-  opacity: 0;
-  transition: ease 0.5s all;
-}
-
-section:nth-of-type(3n + 1) .landing__container::after {
-  content: "";
-  background: rgb(255, 255, 255);
-  background: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(255, 255, 255, 0.2) 100%
-  );
-  position: absolute;
-  right: 20vw;
-  bottom: -5em;
-  z-index: -5;
-  width: 15vh;
-  height: 15vh;
-  border-radius: 50%;
-  opacity: 0;
-  transition: ease 0.5s all;
+  padding: 25px;
+  width: 60%;
+  text-align: center;
+  background-color: rgba(3, 3, 3, 0.7);
+  border: 2px solid #fff;
+  border-radius: 20px;
+  margin-bottom: 2em;
 }
 
 /* ---- Theme State Rules ---- */
@@ -220,5 +224,62 @@ section.your-active-class .landing__container::after {
   }
   to {
     transform: rotate(360deg) translate(-1em) rotate(-360deg);
+  }
+}
+
+/* Media Queries*/
+@media only screen and (max-width: 1024px) {
+  .landing__container {
+    width: 90%;
+  }
+  main {
+    margin-top: 90px;
+    margin-bottom: 16px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .main__hero h1 {
+  font-size: 42px;
+  margin-top: 100px;
+  }
+  .main__hero p {
+  font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .main__hero h1 {
+    font-size: 42px;
+    margin-top: 100px;
+  }
+  .main__hero p {
+    font-size: 10px;
+  }
+  h2 {
+    font-size: 16px;
+  }
+  .navbar__menu {
+    font-size: 12px;
+  }
+  section {
+    margin: 20px;
+  }
+  .landing__container {
+    width: 80%;
+    margin: 20px;
+  }
+  body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .page__footer {
+    padding: 20px;
   }
 }

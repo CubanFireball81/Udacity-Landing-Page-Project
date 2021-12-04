@@ -14,102 +14,94 @@
 
 <body>
     <!-- HTML Follows BEM naming conventions 
-    IDs are only used for sections to connect menu achors to sections -->
+    IDs are only used for sections to connect menu anchors to sections -->
     <header class="page__header">
         <nav class="navbar__menu">
             <!-- Navigation starts as empty UL that will be populated with JS -->
-            <ul id="navbar__list"></ul>
+            <ul id="navbar__list">
+            </ul>
         </nav>
     </header>
     <main>
         <header class="main__hero">
-            <h1>Landing Page</h1>
+            <h1 class="header-title">Simplify your life with Apple Products.</h1>
+            <p class="header-text">Apple makes staying connected easy. Start working on a Macbook, then pickup where you
+                left off on your iPad or iPhone seamlessly. </p>
         </header>
         <!-- Each Section has an ID (used for the anchor) and 
     a data attribute that will populate the li node.
     Adding more sections will automatically populate nav.
     The first section is set to active class by default -->
-        <section id="section1" data-nav="Section 1" class="your-active-class">
+        <section id="section1" data-nav="Macbook" class="your-active-class">
             <div class="landing__container">
-                <h2>Section 1</h2>
+                <h2>Mac does more. So you can, too.</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                    fermentum metus faucibus lectus pharetra dapibus. Suspendisse
-                    potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget
-                    lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed
-                    convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla
-                    eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam
-                    nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis
-                    lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a
-                    tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus
-                    vitae elit. Integer nec libero venenatis libero ultricies molestie
-                    semper in tellus. Sed congue et odio sed euismod.
+                    Easy to learn. Astoundingly powerful. Battery life beyond belief. Mac is designed to let you work,
+                    play, and create in ways you never imagined. It comes loaded with apps that are ready to go right
+                    out of the box. Free, regular software updates keep things up to date and running smoothly. And if
+                    you already have an iPhone, it feels familiar from the moment you turn it on.
                 </p>
-
-                <p>
-                    Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar
-                    gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam.
-                    Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum
-                    consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget
-                    elementum tortor mollis non.
-                </p>
+                <div class="buyBtn">
+                    <button><a href="https://www.apple.com/macbook-pro/" target="_blank">Buy Macbook Now</a></button>
+                </div>
             </div>
         </section>
-        <section id="section2" data-nav="Section 2">
+        <section id="section2" data-nav="iPhone">
             <div class="landing__container">
-                <h2>Section 2</h2>
+                <h2>The iPhone’s performance is outstanding</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                    fermentum metus faucibus lectus pharetra dapibus. Suspendisse
-                    potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget
-                    lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed
-                    convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla
-                    eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam
-                    nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis
-                    lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a
-                    tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus
-                    vitae elit. Integer nec libero venenatis libero ultricies molestie
-                    semper in tellus. Sed congue et odio sed euismod.
+                    With the iPhone, you’ll even be treated like a flagship customer. You’ll get the same software
+                    updates as the brand new phones, you’ll have access to Apple support and Apple Store Genii, and
+                    you’ll be treated to a universe of cases and accessories.
                 </p>
-
-                <p>
-                    Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar
-                    gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam.
-                    Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum
-                    consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget
-                    elementum tortor mollis non.
-                </p>
+                <div class="buyBtn">
+                    <button><a href="https://www.apple.com/iphone/" target="_blank">Buy an iPhone Now</a></button>
+                </div>
             </div>
         </section>
-        <section id="section3" data-nav="Section 3">
+        <section id="section3" data-nav="ipad">
             <div class="landing__container">
-                <h2>Section 3</h2>
+                <h2>Stay productive and on the go all day.</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                    fermentum metus faucibus lectus pharetra dapibus. Suspendisse
-                    potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget
-                    lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed
-                    convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla
-                    eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam
-                    nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis
-                    lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a
-                    tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus
-                    vitae elit. Integer nec libero venenatis libero ultricies molestie
-                    semper in tellus. Sed congue et odio sed euismod.
+                    iPad is so versatile, it’s more than up to any task. Whether you’re working on a project, expressing
+                    your creativity, or playing an immersive game, iPad is a fun and powerful way to get it done. Here
+                    are just a few of the countless things you can do with iPad.
                 </p>
-
+                <div class="buyBtn">
+                    <button><a href="https://www.apple.com/ipad/" target="_blank">Buy an iPad Now</a></button>
+                </div>
+            </div>
+        </section>
+        <section id="section4" data-nav="Airpods">
+            <div class="landing__container">
+                <h2>Performance you’ll want to hear.</h2>
                 <p>
-                    Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar
-                    gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam.
-                    Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum
-                    consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget
-                    elementum tortor mollis non.
+                    With plenty of talk and listen time, voice-activated Siri access, and an available wireless charging
+                    case, AirPods deliver an incredible wireless headphone experience. Simply take them out and they’re
+                    ready to use with all your devices. Put them in your ears and they connect immediately, immersing
+                    you in rich, high-quality sound. Just like magic.
                 </p>
+                <div class="buyBtn">
+                    <button><a href="https://www.apple.com/airpods/" target="_blank">Buy Airpods Now</a></button>
+                </div>
+            </div>
+        </section>
+        <section id="section5" data-nav="Watch">
+            <div class="landing__container">
+                <h2>It’s the ultimate device for a healthy life.</h2>
+                <p>
+                    Apple Watch can do what your other devices can’t because it’s on your wrist. When you wear it, you
+                    get a fitness partner that measures all the ways you move, meaningful health insights, and a
+                    connection to the people and things you care about most. And it’s always just a glance away.
+                </p>
+                <div class="buyBtn buyNow">
+                    <button><a href="https://www.apple.com/watch/" target="_blank">Buy an Apple Watch Now</a></button>
+                </div>
             </div>
         </section>
     </main>
     <footer class="page__footer">
-        <p>&copy Udacity</p>
+        <p>Copyright 2021 &copy; by Alejandro Santiago. All Rights Reserved.</p>
     </footer>
     <script src="./js/app.js"></script>
 </body>
