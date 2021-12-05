@@ -2,10 +2,11 @@
 body {
   background: url('../img/bg-larger.jpg');
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   margin: 0;
   font-family: "Merriweather", serif;
   color: #000;
+  height: 100%;
 }
 
 /* Typeography General*/
@@ -93,13 +94,13 @@ button:hover {
 
 section {
   position: relative;
-  min-height: 70vh;
   margin: 20px;
   border: 2px solid rgb(201, 62, 201);
   border-radius: 50px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  height: 100vh;
 }
 
 #section1 {
@@ -142,7 +143,7 @@ section {
 
 .navbar__menu li {
   display: inline-block;
-  color: #ddd!important;
+  color: #ddd;
   margin: 15px;
   cursor: pointer;
   font-size: 2em;
@@ -163,10 +164,45 @@ section {
   color: rgb(138, 29, 123)!important;
 }
 
+#navbar_list {
+  transition: 0.5s;
+}
+
+#navbar__list.active {
+  display: block;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #fff;
+}
+
 /* Header Styles */
 .page__header {
   background: transparent;
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
   z-index: 5;
@@ -198,23 +234,24 @@ section {
 /* ---- Theme State Rules ---- */
 /* Section Active Styles */
 /* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
-section.your-active-class {
-  background: rgb(0, 0, 0);
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.1) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
+section.section-active-class {
+  border: 2px solid #fff;
 }
 
-section.your-active-class .landing__container::before {
+section.section-active-class .landing__container::before {
   opacity: 1;
   animation: rotate 4s linear 0s infinite forwards;
 }
 
-section.your-active-class .landing__container::after {
+section.section-active-class .landing__container::after {
   opacity: 1;
   animation: rotate 5s linear 0s infinite forwards reverse;
+}
+
+li.link-active-class {
+  background-color: rgb(138, 29, 123);
+  border: 1px solid #fff;
+  border-radius: 50%;
 }
 
 /* Section Active Styles Keyframe Animations */
@@ -281,5 +318,16 @@ section.your-active-class .landing__container::after {
   }
   .page__footer {
     padding: 20px;
+  }
+  .hamburger {
+  display: block;
+  cursor: pointer;
+  }
+  .page__header {
+    position: fixed;
+    display: block!important;
+  }
+  #navbar__list {
+    display: none;
   }
 }
